@@ -1,4 +1,4 @@
-gradio==4.13.0
+gradio==4.29.0
 torch==2.1.1
 torchaudio==2.1.1
 faster-whisper==1.0.1
@@ -25,3 +25,4 @@ transformers==4.36.2
 deepl
 requests
 pysubs2
+fastapi==0.112.2
