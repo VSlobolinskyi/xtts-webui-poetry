@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "xtts-webui-poetry"
+version = "0.1.0"
+description = "XTTS inference web UI with enhanced performance using poetry"
+authors = ["vitalii.slobolinskyi"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+
+# Platform-specific installations for torch and torchaudio:
+torch = [
+  { url = "https://download.pytorch.org/whl/cu124/torch-2.4.1%2Bcu124-cp311-cp311-win_amd64.whl#sha256=b0b3a904bc66cd6f54652d33b8509b5c64b862763c073a15cf740161c77debbc", markers = "sys_platform == 'win32'" },
+  { url = "https://download.pytorch.org/whl/cu124/torch-2.4.1%2Bcu124-cp311-cp311-linux_x86_64.whl#sha256=16e4ef3b32b45a278a0c512723f81cfa57035ebd5a75dbc2fb1360197ae06acd", markers = "sys_platform == 'linux'" }
+]
+torchaudio = [
+  { url = "https://download.pytorch.org/whl/cu124/torchaudio-2.4.1%2Bcu124-cp311-cp311-win_amd64.whl#sha256=9be91e449abfa76cde0c5e1a4fb91200668eb4fa9177daa131bf335e8f13092a", markers = "sys_platform == 'win32'" },
+  { url = "https://download.pytorch.org/whl/cu124/torchaudio-2.4.1%2Bcu124-cp311-cp311-linux_x86_64.whl#sha256=9045eeb86e8fc8767fb75224978051b114724d19af8f566c9dbd2c5c7d150f91", markers = "sys_platform == 'linux'" }
+]
+
+gradio = "4.43.0"
+faster-whisper = "1.1.0"
+coqui-tts = { version = "0.24.2", extras = ["languages"] }
+pypinyin = "*"
+hangul_romanize = "*"
+langid = "*"
+noisereduce = "*"
+pedalboard = "*"
+pydub = "*"
+ffmpeg-python = "*"
+soundfile = "*"
+cutlet = "*"
+fugashi = { version = "*", extras = ["unidic-lite"] }
+loguru = "*"
+omegaconf = "2.3.0"
+resampy = "0.4.2"
+tabulate = "0.8.10"
+requests = "*"
+faiss-cpu = "*"
+pyworld = "*"
+torchcrepe = "*"
+praat-parselmouth = ">=0.4.2"
+translators = "*"
+spacy = ">=3.2.0"
+transformers = ">=4.42.0,<4.43.0"
+deepl = "*"
+pysubs2 = "*"
+whisperx = "*"
+silero-tts = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -30,59 +30,18 @@ XTTS-Webui is a web interface that allows you to make the most of XTTS. There ar
 
 ## Installation
 
-Use this web UI through [Google Colab](https://colab.research.google.com/drive/1MrzAYgANm6u79rCCQQqBSoelYGiJ1qYL)
+1. **Check if poetry is installed** `poetry --version`
+2. **If it isn't installed install poetry globally** `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python - `
+3. `git clone https://github.com/VSlobolinskyi/xtts-finetune-webui-poetry.git`
+4. `cd ./xtts-finetune-webui-poetry`
+5. **Run this for windows machine** `poetry lock`
+6. `poetry install`
+7. In VSCode press CTRL+SHIFT+P -> Pyton:Slect Interpreter -> select your `: Poetry` project
+8. `poetry run python scripts/modeldownloader.py`
 
-**Please ensure you have Python 3.10.x or Python 3.11, CUDA 11.8 or CUDA 12.1 , Microsoft Builder Tools 2019 with c++ package, and ffmpeg installed**
+## Running The App
 
-### 1 Method, through scripts
-
-#### Windows
-To get started:
-- Run 'install.bat' file
-- To start the web UI, run 'start_xtts_webui.bat'
-- Open your preferred browser and go to local address displayed in console.
-- 
-#### Linux
-To get started:
-- Run 'install.sh' file
-- To start the web UI, run 'start_xtts_webui.sh'
-- Open your preferred browser and go to local address displayed in console.
-
-### 2 Method, Manual
-Follow these steps for installation:
-1. Ensure that `CUDA` is installed
-2. Clone the repository: `git clone https://github.com/daswer123/xtts-webui`
-3. Navigate into the directory: `cd xtts-webui`
-4. Create a virtual environment: `python -m venv venv`
-5. Activate the virtual environment:
-   - On Windows use : `venv\scripts\activate`
-   - On linux use    : `source venv\bin\activate`
-
-6. Install PyTorch and torchaudio with pip command :
-
-   `pip install torch==2.1.1+cu118 torchaudio==2.1.1+cu118 --index-url https://download.pytorch.org/whl/cu118`
-
-7. Install all dependencies from requirements.txt :
-
-    `pip install -r requirements.txt`
-
-## Running The Application
-
-To launch the interface please follow these steps:
-
-#### Starting XTTS WebUI :
-Activate your virtual environment:
-```bash
-venv/scripts/activate
-```
-or if you're on Linux,
-```bash
-source venv/bin/activate
-```
-Then start the webui for xtts by running this command:
-```bash
-python app.py
-```
+`poetry run python app.py --deepspeed --rvc`
 
 Here are some runtime arguments that can be used when starting the application:
 
