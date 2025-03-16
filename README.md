@@ -34,7 +34,7 @@ XTTS-Webui is a web interface that allows you to make the most of XTTS. There ar
 2. **If it isn't installed install poetry globally** `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python - `
 3. `git clone https://github.com/VSlobolinskyi/xtts-finetune-webui-poetry.git`
 4. `cd ./xtts-finetune-webui-poetry`
-5. **Run this for windows machine** `poetry lock`
+5. **Run this for linux machines** `poetry lock`
 6. `poetry install`
 7. In VSCode press CTRL+SHIFT+P -> Pyton:Slect Interpreter -> select your `: Poetry` project
 8. `poetry run python scripts/modeldownloader.py`
